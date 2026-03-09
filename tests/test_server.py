@@ -3,7 +3,6 @@
 from unittest.mock import patch
 
 import httpx
-import pytest
 
 from orb_cloud_mcp.server import mcp, main, resource_organizations, resource_devices
 from tests.conftest import ORG_PAYLOAD, DEVICE_PAYLOAD

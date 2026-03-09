@@ -40,7 +40,9 @@ async def test_configure_temp_datasets_with_push(respx_mock):
         ),
     )
 
-    result = await configure_temp_datasets("device-abc", duration="30m", datasets_config=config)
+    result = await configure_temp_datasets(
+        "device-abc", duration="30m", datasets_config=config
+    )
     assert result["status"] == "configured"
 
     # Verify the request body was sent
@@ -63,7 +65,9 @@ async def test_configure_temp_datasets_with_api(respx_mock):
         )
     )
 
-    result = await configure_temp_datasets("device-abc", duration="2h", datasets_config=config)
+    result = await configure_temp_datasets(
+        "device-abc", duration="2h", datasets_config=config
+    )
     assert result["status"] == "configured"
 
 
@@ -79,7 +83,9 @@ async def test_configure_temp_datasets_with_cloud_push(respx_mock):
         )
     )
 
-    result = await configure_temp_datasets("device-abc", duration="1h", datasets_config=config)
+    result = await configure_temp_datasets(
+        "device-abc", duration="1h", datasets_config=config
+    )
     assert result["status"] == "configured"
 
 

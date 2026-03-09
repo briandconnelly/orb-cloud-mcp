@@ -20,9 +20,7 @@ class DataPushConfig(BaseModel):
         None, description="Whether to include identifiable data."
     )
     format: str | None = Field(None, description="Payload format (e.g. 'json').")
-    interval_ms: int | None = Field(
-        None, description="Push interval in milliseconds."
-    )
+    interval_ms: int | None = Field(None, description="Push interval in milliseconds.")
     buffer_kb: int | None = Field(None, description="Buffer size in kilobytes.")
 
 
@@ -44,10 +42,10 @@ class DataAPIConfig(BaseModel):
 class DatasetsConfig(BaseModel):
     """Top-level dataset configuration."""
 
-    datasets: list[str] | None = Field(
-        None, description="Dataset names to collect."
+    datasets: list[str] | None = Field(None, description="Dataset names to collect.")
+    enabled: bool | None = Field(
+        None, description="Whether data collection is enabled."
     )
-    enabled: bool | None = Field(None, description="Whether data collection is enabled.")
     push: DataPushConfig | None = Field(
         None, description="Push data to a custom HTTP endpoint."
     )
@@ -61,7 +59,9 @@ class DatasetsConfig(BaseModel):
 
 async def configure_temp_datasets(
     device_id: str,
-    duration: str = Field(..., description="How long to enable (e.g. '30m', '1h', '2h')."),
+    duration: str = Field(
+        ..., description="How long to enable (e.g. '30m', '1h', '2h')."
+    ),
     datasets_config: DatasetsConfig | None = None,
 ) -> dict[str, Any]:
     """Configure temporary dataset collection and push for an Orb Cloud device.

@@ -11,6 +11,7 @@ from tests.conftest import DEVICE_PAYLOAD
 # list_devices — stable fields
 # ---------------------------------------------------------------------------
 
+
 async def test_list_devices_success(respx_mock):
     respx_mock.get("/api/v2/organization/org-123/devices").mock(
         return_value=httpx.Response(200, json=DEVICE_PAYLOAD)
@@ -117,6 +118,7 @@ async def test_list_devices_missing_api_key(monkeypatch):
 # ---------------------------------------------------------------------------
 # get_device_telemetry — live fields
 # ---------------------------------------------------------------------------
+
 
 async def test_get_device_telemetry_all_devices(respx_mock):
     respx_mock.get("/api/v2/organization/org-123/devices").mock(

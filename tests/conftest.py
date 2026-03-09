@@ -2,7 +2,6 @@
 
 import pytest
 import respx
-import httpx
 
 import orb_cloud_mcp.cache as _cache_module
 

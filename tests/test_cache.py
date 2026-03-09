@@ -1,7 +1,6 @@
 """Tests for caching behaviour in list_organizations and list_devices."""
 
 import httpx
-import pytest
 
 import orb_cloud_mcp.cache as cache_module
 from orb_cloud_mcp.tools.devices import list_devices
@@ -133,6 +132,7 @@ async def test_get_device_telemetry_not_cached(respx_mock):
 
 def test_cache_ttl_default():
     import orb_cloud_mcp.cache as m
+
     assert m._DEFAULT_TTL == 300
 
 

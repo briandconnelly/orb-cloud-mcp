@@ -65,7 +65,9 @@ def _serialize_score(score: OrbScore | None) -> dict[str, Any] | None:
         "score_version": score.score_version,
     }
     if score.components:
-        result["components"] = {k: _serialize_score(v) for k, v in score.components.items()}
+        result["components"] = {
+            k: _serialize_score(v) for k, v in score.components.items()
+        }
     return result
 
 
