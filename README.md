@@ -78,19 +78,3 @@ The config file location varies by platform:
   }
 }
 ```
-
-## Development
-
-```bash
-git clone https://github.com/yourname/orb-cloud-mcp
-cd orb-cloud-mcp
-uv sync
-```
-
-Run the test suite (90% coverage required):
-
-```bash
-uv run pytest
-```
-
-Set `ORB_CLOUD_API_KEY` in your environment to run manual tests against the live API.
