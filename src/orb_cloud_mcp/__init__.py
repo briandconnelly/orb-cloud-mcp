@@ -1,3 +1,8 @@
 """MCP server for Orb Cloud device management."""
 
-__version__ = "0.1.0"
+from importlib.metadata import PackageNotFoundError, version
+
+try:
+    __version__ = version("orb-cloud-mcp")
+except PackageNotFoundError:
+    __version__ = "unknown"

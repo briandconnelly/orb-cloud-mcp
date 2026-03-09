@@ -1,7 +1,7 @@
 """Tests for organization tools and resources."""
 
-import pytest
 import httpx
+import pytest
 
 from orb_cloud_mcp.tools.organizations import list_organizations
 from tests.conftest import ORG_PAYLOAD

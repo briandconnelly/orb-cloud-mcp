@@ -76,8 +76,8 @@ async def configure_temp_datasets(
         datasets_config: Dataset collection and push configuration. If omitted,
             only the duration is updated.
     """
+    from orb_cloud_client.models.config import DataAPI, DataPush, Datasets
     from orb_cloud_client.models.generic import TempDatasetsRequest
-    from orb_cloud_client.models.config import Datasets, DataPush, DataAPI
 
     def _to_data_push(cfg: DataPushConfig | None) -> DataPush | None:
         if cfg is None:

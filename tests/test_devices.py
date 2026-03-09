@@ -1,11 +1,10 @@
 """Tests for device tools."""
 
-import pytest
 import httpx
+import pytest
 
-from orb_cloud_mcp.tools.devices import list_devices, get_device_telemetry
+from orb_cloud_mcp.tools.devices import get_device_telemetry, list_devices
 from tests.conftest import DEVICE_PAYLOAD
-
 
 # ---------------------------------------------------------------------------
 # list_devices — stable fields
