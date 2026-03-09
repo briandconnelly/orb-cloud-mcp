@@ -2,40 +2,52 @@
 
 An [MCP](https://modelcontextprotocol.io/) server for [Orb Cloud](https://orb.net/product/orb-cloud) device management. Exposes your Orb Cloud organizations and devices to any MCP-compatible client (Claude Desktop, Cursor, etc.).
 
-## Features
+## Tools and resources
 
 **Tools**
-- `list_organizations` — List all organizations accessible with your API key
-- `list_devices` — List devices in an organization, including connectivity status and Orb scores
-- `trigger_speedtest` — Run a `content` or `top` speed test on a device
-- `configure_temp_datasets` — Enable temporary data push from a device to a custom endpoint
+
+| Tool | Description |
+|------|-------------|
+| `list_organizations` | List all organizations accessible with your API key |
+| `list_devices` | List devices in an organization — hardware info, location, firmware, and configuration (cached) |
+| `get_device_telemetry` | Real-time connectivity status and Orb performance scores for devices in an organization |
+| `trigger_speedtest` | Trigger a `content` or `top` speed test on a device |
+| `configure_temp_datasets` | Enable temporary data push from a device to a custom endpoint |
 
 **Resources**
-- `orb://organizations` — All accessible organizations
-- `orb://organizations/{organization_id}/devices` — Devices in an organization
+
+| URI | Description |
+|-----|-------------|
+| `orb://organizations` | All accessible organizations (cached) |
+| `orb://organizations/{organization_id}/devices` | Stable device info for an organization (cached) |
+
+`list_devices` and `list_organizations` results are cached for 5 minutes by default (see [Configuration](#configuration)).
 
 ## Requirements
 
 - Python 3.10+
-- An Orb Cloud API token (Plus plan or above)
+- An Orb Cloud API token — requires a [Plus plan or above](https://orb.net/product/orb-cloud). Generate a token in the Orb Cloud panel under **Settings → API Keys**.
 
 ## Installation
 
 ```bash
-uv tool install orb-cloud-mcp
+pip install orb-cloud-mcp
 ```
 
 ## Configuration
 
-Set your API token in the `ORB_CLOUD_API_KEY` environment variable:
-
-```bash
-export ORB_CLOUD_API_KEY=your-token-here
-```
+| Environment variable | Required | Default | Description |
+|----------------------|----------|---------|-------------|
+| `ORB_CLOUD_API_KEY` | Yes | — | Your Orb Cloud API token |
+| `ORB_CLOUD_CACHE_TTL` | No | `300` | Cache TTL in seconds for stable data. Set to `0` to disable caching. |
 
 ### Claude Desktop
 
-Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+The config file location varies by platform:
+
+- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+- **Linux:** `~/.config/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -51,7 +63,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 }
 ```
 
-### Cursor / other MCP clients
+### Cursor and other MCP clients
 
 ```json
 {
@@ -73,5 +85,12 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 git clone https://github.com/yourname/orb-cloud-mcp
 cd orb-cloud-mcp
 uv sync
+```
+
+Run the test suite (90% coverage required):
+
+```bash
 uv run pytest
 ```
+
+Set `ORB_CLOUD_API_KEY` in your environment to run manual tests against the live API.
