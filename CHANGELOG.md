@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-03-09
+
+### Added
+
+- GitHub Actions workflow to run [prek](https://github.com/j178/prek) checks on every push and pull request
+- GitHub Actions workflow to run tests and upload coverage reports to Codecov
+- README badges for Python version, license, and package version
+
+### Changed
+
+- `__version__` is now derived from installed package metadata via `importlib.metadata` rather than being hardcoded
+- Extended ruff lint rules: `F`, `UP`, `RUF`, `ASYNC`, `B`, `SIM`, and `I` (isort)
+
 ## [0.1.0] - 2026-03-09
 
 ### Added
