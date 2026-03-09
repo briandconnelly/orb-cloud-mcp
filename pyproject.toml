@@ -1,10 +1,11 @@
 [project]
 name = "orb-cloud-mcp"
 version = "0.1.0"
-description = "MCP server for Orb Cloud device management"
+description = "MCP server for Orb Cloud device management and data analysis"
 authors = [
     { name = "Brian Connelly", email = "bdc@bconnelly.net" }
 ]
+license = "MIT"
 requires-python = ">=3.10"
 dependencies = [
     "cachetools>=7.0.4",
