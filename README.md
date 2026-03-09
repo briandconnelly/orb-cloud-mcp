@@ -1,5 +1,9 @@
 # orb-cloud-mcp
 
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/orb-cloud-mcp)
+![PyPI - License](https://img.shields.io/pypi/l/orb-cloud-mcp)
+![PyPI - Version](https://img.shields.io/pypi/v/orb-cloud-mcp)
+
 An [MCP](https://modelcontextprotocol.io/) server for [Orb Cloud](https://orb.net/product/orb-cloud) device management. Exposes your Orb Cloud organizations and devices to any MCP-compatible client (Claude Desktop, Cursor, etc.).
 
 ## Tools and resources
