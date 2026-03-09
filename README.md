@@ -78,3 +78,7 @@ The config file location varies by platform:
   }
 }
 ```
+
+## Disclaimer
+
+This tool is not officially affiliated with Orb. For official support, visit [orb.net](https://orb.net).
