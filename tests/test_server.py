@@ -2,10 +2,17 @@
 
 from unittest.mock import patch
 
+import orb_cloud_mcp
+
 import httpx
 
 from orb_cloud_mcp.server import mcp, main, resource_organizations, resource_devices
 from tests.conftest import ORG_PAYLOAD, DEVICE_PAYLOAD
+
+
+def test_version():
+    assert isinstance(orb_cloud_mcp.__version__, str)
+    assert orb_cloud_mcp.__version__ != ""
 
 
 async def test_server_has_tools():
