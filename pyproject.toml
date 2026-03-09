@@ -35,7 +35,7 @@ asyncio_mode = "auto"
 addopts = "--cov=orb_cloud_mcp --cov-report=term-missing --cov-fail-under=90"
 
 [tool.ruff.lint]
-select = ["I", "F", "UP", "RUF", "ASYNC", "B"]
+select = ["I", "F", "UP", "RUF", "ASYNC", "B", "SIM"]
 
 [tool.coverage.run]
 branch = true
