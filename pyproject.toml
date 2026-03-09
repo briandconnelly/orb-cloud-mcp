@@ -34,5 +34,8 @@ dev = [
 asyncio_mode = "auto"
 addopts = "--cov=orb_cloud_mcp --cov-report=term-missing --cov-fail-under=90"
 
+[tool.ruff.lint]
+select = ["I"]
+
 [tool.coverage.run]
 branch = true

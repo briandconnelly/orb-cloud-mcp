@@ -7,7 +7,6 @@ from orb_cloud_mcp.tools.devices import list_devices
 from orb_cloud_mcp.tools.organizations import list_organizations
 from tests.conftest import DEVICE_PAYLOAD, ORG_PAYLOAD
 
-
 # ---------------------------------------------------------------------------
 # list_organizations caching
 # ---------------------------------------------------------------------------

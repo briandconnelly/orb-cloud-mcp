@@ -1,10 +1,9 @@
 """Tests for speedtest tool."""
 
-import pytest
 import httpx
+import pytest
 
 from orb_cloud_mcp.tools.speedtest import trigger_speedtest
-
 
 SPEEDTEST_RESPONSE = {"status": "triggered", "test_id": "test-xyz"}
 

@@ -2,10 +2,10 @@
 
 from fastmcp import FastMCP
 
-from orb_cloud_mcp.tools.organizations import list_organizations
-from orb_cloud_mcp.tools.devices import list_devices, get_device_telemetry
-from orb_cloud_mcp.tools.speedtest import trigger_speedtest
 from orb_cloud_mcp.tools.datasets import configure_temp_datasets
+from orb_cloud_mcp.tools.devices import get_device_telemetry, list_devices
+from orb_cloud_mcp.tools.organizations import list_organizations
+from orb_cloud_mcp.tools.speedtest import trigger_speedtest
 
 mcp = FastMCP(
     name="orb-cloud",

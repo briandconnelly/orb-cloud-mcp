@@ -2,12 +2,11 @@
 
 from unittest.mock import patch
 
-import orb_cloud_mcp
-
 import httpx
 
-from orb_cloud_mcp.server import mcp, main, resource_organizations, resource_devices
-from tests.conftest import ORG_PAYLOAD, DEVICE_PAYLOAD
+import orb_cloud_mcp
+from orb_cloud_mcp.server import main, mcp, resource_devices, resource_organizations
+from tests.conftest import DEVICE_PAYLOAD, ORG_PAYLOAD
 
 
 def test_version():
