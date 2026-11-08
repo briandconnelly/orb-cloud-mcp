@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-08
+
+### Deprecated
+
+- This project is no longer maintained.
+  Use Orb's official MCP server instead: <https://orb.net/docs/integrations/mcp>
+
 ## [0.1.1] - 2026-03-09
 
 ### Added
