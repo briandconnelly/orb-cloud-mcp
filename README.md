@@ -5,6 +5,11 @@
 ![PyPI - Version](https://img.shields.io/pypi/v/orb-cloud-mcp)
 [![codecov](https://codecov.io/gh/briandconnelly/orb-cloud-mcp/graph/badge.svg?token=nbx0UvwsdU)](https://codecov.io/gh/briandconnelly/orb-cloud-mcp)
 
+> [!WARNING]
+> **This project is no longer maintained.**
+> Orb now provides an official MCP server for Orb Cloud.
+> Please use it instead: <https://orb.net/docs/integrations/mcp>
+
 An [MCP](https://modelcontextprotocol.io/) server for [Orb Cloud](https://orb.net/product/orb-cloud) device management. Exposes your Orb Cloud organizations and devices to any MCP-compatible client (Claude Desktop, Cursor, etc.).
 
 ## Tools and resources
